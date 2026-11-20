@@ -7,10 +7,12 @@ const token = localStorage.getItem("token");
 const authLink = document.querySelector("#auth-link");
 
 if (token) {
-
+// Affiche le bouton modifier si l'utilisateur est connecté.
+    document.querySelector("#edit-button").hidden = false;
     // Affiche le bandeau noir.
     document.querySelector("#edit-banner").hidden = false;
-
+    // Cache les boutons de filtrage si l'utilisateur est connecté.
+    document.querySelector(".filters").style.display = "none";
     // Remplace le texte "login" par "logout".
     authLink.textContent = "logout";
 
@@ -161,3 +163,32 @@ Si c'est faux : filter l'écarte.*/
     });
 
   });
+
+/* OUVRIR ET FERMER LA MODALE */
+
+// Récupère le bouton "modifier" dans le HTML.
+const boutonModifier = document.querySelector("#edit-button");
+
+// Récupère la fenêtre modale.
+const modale = document.querySelector("#modal");
+
+// Récupère la croix qui ferme la modale.
+const boutonFermer = document.querySelector("#close-modal");
+
+
+// OUVRIR LA MODALE
+
+// Quand on clique sur "modifier"...
+boutonModifier.addEventListener("click", () => {
+
+    // On rend la modale visible.
+    modale.hidden = false;
+});
+
+// FERMER LA MODALE
+
+// Quand on clique sur la croix...
+boutonFermer.addEventListener("click", () => {
+    // On cache la modale.
+    modale.hidden = true;
+});

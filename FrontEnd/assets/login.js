@@ -1,24 +1,17 @@
 
 /* RÉCUPÉRER LE FORMULAIRE */
 
-// Cherche le formulaire dans la page HTML.
 const formulaire = document.querySelector("#login form");
-
-// Cherche le paragraphe qui affichera les erreurs.
+// Paragraphe qui affichera les erreurs.
 const messageErreur = document.querySelector("#login-error");
-
 
 /* DÉTECTER L'ENVOI DU FORMULAIRE */
 
-// Attend que l'utilisateur valide le formulaire.
 formulaire.addEventListener("submit", (event) => {
-
     // Empêche le navigateur de recharger la page.
     event.preventDefault();
-
     // Efface le message d'erreur précédent.
     messageErreur.textContent = "";
-
     // Récupère l'email et le mot de passe saisis.
     const email = document.querySelector("#email").value;
     const password = document.querySelector("#password").value;

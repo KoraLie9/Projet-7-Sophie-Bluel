@@ -313,3 +313,85 @@ footer nav li {
     display: none;
 }
 
+/* Place le titre et le bouton sur la même ligne */
+.portfolio-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+/* Enlève la marge sous le titre */
+#portfolio .portfolio-title h2 {
+    margin-bottom: 0;
+}
+
+/* Apparence du bouton modifier */
+#edit-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Work Sans';
+    font-size: 14px;
+}
+
+/* Cache le bouton quand il possède l'attribut hidden */
+#edit-button[hidden] {
+    display: none;
+}
+
+
+/* Fond sombre derrière la fenêtre */
+#modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Cache la fenêtre au départ */
+#modal[hidden] {
+    display: none;
+}
+
+/* Fenêtre blanche */
+.modal-content {
+    background-color: white;
+    width: 630px;
+    max-width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-sizing: border-box;
+	position: relative;
+}
+
+/* Titre de la fenêtre */
+.modal-content h2 {
+    color: black;
+    font-family: 'Work Sans';
+    font-size: 26px;
+    font-weight: 400;
+    text-align: center;
+    margin: 25px 0 40px;
+}
+/* Place la croix en haut à droite de la modale */
+#close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
