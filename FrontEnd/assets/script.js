@@ -1,3 +1,38 @@
+/* VÉRIFIER SI L'UTILISATEUR EST CONNECTÉ */
+
+// Récupère le token enregistré.
+const token = localStorage.getItem("token");
+
+// Récupère le lien "login" dans le menu.
+const authLink = document.querySelector("#auth-link");
+
+if (token) {
+
+    // Affiche le bandeau noir.
+    document.querySelector("#edit-banner").hidden = false;
+
+    // Remplace le texte "login" par "logout".
+    authLink.textContent = "logout";
+
+    // Détecte un clic sur "logout".
+    authLink.addEventListener("click", (event) => {
+
+        // Empêche d'ouvrir la page login.
+        event.preventDefault();
+
+        // Supprime le token enregistré.
+        localStorage.removeItem("token");
+
+        // Recharge la page d'accueil.
+        window.location.reload();
+
+    });
+
+} else {
+
+    console.log("Utilisateur non connecté");
+
+}
 
 /* LES VARIABLES */
 

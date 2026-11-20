@@ -281,3 +281,35 @@ footer nav li {
     text-decoration: underline;
 }
 
+/* Message d'erreur de connexion */
+#login-error {
+    color: #B00020;              
+    background-color: #FFF0F0;  
+    font-weight: 600;            
+    text-align: center;          
+    padding: 12px;               
+    border-radius: 6px;          
+    margin-bottom: 20px;         
+}
+
+#login-error:empty {
+    display: none;
+}
+
+
+/* Bandeau du mode édition */
+#edit-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background-color: black;
+    color: white;
+    padding: 15px;
+}
+
+/* Cache le bandeau lorsque l'utilisateur n'est pas connecté */
+#edit-banner[hidden] {
+    display: none;
+}
+
