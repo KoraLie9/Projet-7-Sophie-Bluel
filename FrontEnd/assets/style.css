@@ -112,6 +112,7 @@ nav li {
 li:hover {
 	color: #B1663C;
 }
+
 #introduction {
 	display: flex;
 	align-items: center;
@@ -139,6 +140,9 @@ li:hover {
 	text-align: center;
 	margin-bottom: 1em;
 }
+
+/* 🟢 BOUTONS DE FILTRAGE */
+/* Organisation des filtres sur une ligne et les centre */
 .filters {
 	display: flex;
 	justify-content: center;
@@ -147,6 +151,7 @@ li:hover {
 	margin: 50px 0;			
 }
 
+/* Apparence des boutons de filtrage */
 .filters button {
 	background-color: white;
 	color: #1D6154;
@@ -159,10 +164,12 @@ li:hover {
 	cursor: pointer;
 }
 
+/* Change la couleur des boutons au passage de la souris */
 .filters button:hover {
 	background-color: #1D6154;
 	color: white;
 }
+/* 🟢🟢 FIN BOUTONS DE FILTRAGE */
 
 .gallery {
 	width: 100%;
@@ -233,71 +240,79 @@ footer nav li {
 	
 }
 
-/* Login */
-
+/* 🟢 PAGE DE CONNEXION */
+/* Définit la largeur du formulaire et le centre */
 #login {
     width: 380px;
     margin: 140px auto 0;
 }
 
+/* Organise les éléments du formulaire verticalement */
 #login form {
     display: flex;
     flex-direction: column;
 }
 
 #login h2 {
-	text-align: center;
+    text-align: center;
 }
 
+/* Espacement des étiquettes */
 #login label {
     margin-bottom: 7px;
-	margin-top: 30px;
+    margin-top: 30px;
 }
+
+/* Apparence des champs email et mot de passe */
 #login input[type="email"],
 #login input[type="password"] {
     height: 50px;
     border: none;
-    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+    box-shadow: 0px 4px 14px #E5E5E5;
     margin-bottom: 25px;
     padding: 0 10px;
 }
 
+/* Bouton de connexion */
 #login input[type="submit"] {
-	height: 36px;
-	font-family: 'Syne';
-	font-weight: 700;
-	color: white;
-	background-color: #1D6154;
-	width: 180px;
-	text-align: center;
-	border-radius: 60px;
-	border: none;
+    height: 36px;
+    font-family: 'Syne';
+    font-weight: 700;
+    color: white;
+    background-color: #1D6154;
+    width: 180px;
+    text-align: center;
+    border-radius: 60px;
+    border: none;
 }
 
-/* Centre le lien et change sa couleur */
+/* Lien de récupération du mot de passe */
 #login form a {
     align-self: center;
     color: #3D3D3D;
     text-decoration: underline;
 }
 
-/* Message d'erreur de connexion */
+/* MESSAGE D'ERREUR DE CONNEXION */
+/* Message affiché si les identifiants sont incorrects */
 #login-error {
-    color: #B00020;              
-    background-color: #FFF0F0;  
-    font-weight: 600;            
-    text-align: center;          
-    padding: 12px;               
-    border-radius: 6px;          
-    margin-bottom: 20px;         
+    color: #B00020;
+    background-color: #FFF0F0;
+    font-weight: 600;
+    text-align: center;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 20px;
 }
 
+/* Cache le message lorsqu'il est vide */
 #login-error:empty {
     display: none;
 }
 
 
-/* Bandeau du mode édition */
+/* MODE ÉDITION */
+/* Bandeau noir du Mode édition */
 #edit-banner {
     display: flex;
     justify-content: center;
@@ -308,12 +323,12 @@ footer nav li {
     padding: 15px;
 }
 
-/* Cache le bandeau lorsque l'utilisateur n'est pas connecté */
+/* Cache le bandeau si l'utilisateur n'est pas connecté */
 #edit-banner[hidden] {
     display: none;
 }
 
-/* Place le titre et le bouton sur la même ligne */
+/* Place le titre Mes Projets et le bouton modifier sur la même ligne */
 .portfolio-title {
     display: flex;
     justify-content: center;
@@ -322,7 +337,7 @@ footer nav li {
     margin-bottom: 30px;
 }
 
-/* Enlève la marge sous le titre */
+/* Supprime la marge du titre dans ce conteneur */
 #portfolio .portfolio-title h2 {
     margin-bottom: 0;
 }
@@ -336,38 +351,39 @@ footer nav li {
     font-size: 14px;
 }
 
-/* Cache le bouton quand il possède l'attribut hidden */
+/* Cache le bouton modifier si hidden est présent */
 #edit-button[hidden] {
     display: none;
 }
 
 
-/* Fond sombre derrière la fenêtre */
+/* 🟢 FENÊTRE MODALE */
+/* Fond gris transparent couvrant l'écran */
 #modal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
-
+    background-color: #0000004D;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
 }
 
-/* Cache la fenêtre au départ */
+/* Cache toute la modale si hidden est présent */
 #modal[hidden] {
     display: none;
 }
 
-/* Fenêtre blanche */
+/* Fenêtre blanche au centre de l'écran */
 .modal-content {
+    position: relative;
     background-color: white;
     width: 630px;
     max-width: 90%;
-    max-height: 90vh;
+    max-height: 600px;
     overflow-y: auto;
     padding: 30px;
     border-radius: 10px;
@@ -375,7 +391,7 @@ footer nav li {
 	position: relative;
 }
 
-/* Titre de la fenêtre */
+/* Titres Galerie photo et Ajout photo */
 .modal-content h2 {
     color: black;
     font-family: 'Work Sans';
@@ -384,7 +400,8 @@ footer nav li {
     text-align: center;
     margin: 25px 0 40px;
 }
-/* Place la croix en haut à droite de la modale */
+
+/* Croix de fermeture en haut à droite */
 #close-modal {
     position: absolute;
     top: 20px;
@@ -393,5 +410,200 @@ footer nav li {
     border: none;
     font-size: 24px;
     cursor: pointer;
+}
+
+/* Flèche de retour en haut à gauche */
+#back-to-gallery {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Cache une zone de la modale si hidden est présent */
+#modal-gallery[hidden],
+#modal-add[hidden],
+#photo-preview[hidden] {
+    display: none;
+}
+
+
+/*  🟢 GALERIE DE LA MODALE */
+/* Organise les miniatures en cinq colonnes */
+#modal-works {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    width: 70%;
+    margin: 0 auto 40px;
+}
+
+/* Ligne grise séparant les photos du bouton */
+.modal-gallery-separator {
+    border: none;
+    border-top: 1px solid #B3B3B3;
+    width: 70%;
+    margin: 0 auto 30px;
+}
+
+/* Taille des petites photos */
+#modal-works img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+
+/* Permet de positionner la poubelle sur chaque photo */
+#modal-works figure {
+    position: relative;
+}
+
+/* Bouton poubelle placé sur chaque photo */
+.delete-work {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+/* Bouton vert Ajouter une photo */
+#add-photo-button {
+    display: block;
+    margin: 0 auto;
+    height: 36px;
+    font-family: 'Syne';
+    font-weight: 700;
+    color: white;
+    background-color: #1D6154;
+    width: 180px;
+    text-align: center;
+    border-radius: 60px;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* 🟢 FORMULAIRE D'AJOUT */
+/* Centre la zone du formulaire */
+#modal-add {
+    width: 70%;
+    margin: 0 auto;
+}
+
+/* Cadre bleu clair qui accueille le choix de l'image */
+.photo-upload {
+    background-color: #E8F1F6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 3px;
+}
+
+/* Grande icône d'image */
+.photo-upload i {
+    font-size: 60px;
+    color: #B9C5CC;
+}
+
+/* Bouton visuel pour choisir une photo */
+.photo-upload label {
+    background-color: #CBD6DC;
+    color: #306685;
+    padding: 10px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+/* Cache le champ de fichier classique */
+.photo-upload input[type="file"] {
+    display: none;
+}
+
+/* Petit texte indiquant les formats acceptés */
+.photo-upload p {
+    font-size: 10px;
+    color: #444444;
+}
+
+/* 🟢 CHAMPS TITRE ET CATÉGORIE */
+/* Étiquettes du formulaire */
+#modal-add > label {
+    display: block;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-family: 'Work Sans';
+}
+
+/* Apparence du champ Titre et de la liste Catégorie */
+#photo-title,
+#photo-category {
+    display: block;
+    width: 100%;
+    height: 51px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    background-color: white;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+    font-family: 'Work Sans';
+}
+
+/* Conteneur de la liste Catégorie */
+.select-container {
+    position: relative;
+}
+
+/* Cache la flèche d'origine de la liste déroulante */
+#photo-category {
+    appearance: none;
+    padding-right: 45px;
+}
+
+/* Place notre flèche personnalisée dans la liste */
+.select-container i {
+    position: absolute;
+    right: 20px;
+    top: 18px;
+    pointer-events: none;
+}
+
+/* Ligne grise avant le bouton Valider */
+.modal-separator {
+    border: none;
+    border-top: 1px solid #B3B3B3;
+    margin: 40px 0 30px;
+}
+
+/* Bouton Valider gris car l'ajout n'est pas encore programmé */
+#validate-photo {
+    display: block;
+    margin: 0 auto;
+    width: 237px;
+    max-width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 60px;
+    background-color: #A7A7A7;
+    color: white;
+    font-family: 'Syne';
+    font-size: 14px;
+    cursor: not-allowed;
 }
 
